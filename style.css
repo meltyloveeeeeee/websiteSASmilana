@@ -1,0 +1,218 @@
+/* Layout dasar */
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    font-family: 'Poppins', sans-serif;
+    background: url('image.jpg') no-repeat center center fixed;
+    background-size: cover;
+    background-image: url(image.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-attachment: fixed;
+}
+
+
+/* ===== HEADER IMAGE ===== */
+.header-image img {
+    width: 100%;
+    height: 220px;
+    object-fit: cover;
+    display: block;
+}
+
+
+/* ===== NAVBAR ===== */
+.navbar {
+    background: #fbe38a;
+    backdrop-filter: blur(6px);
+    -webkit-backdrop-filter: blur(6px);
+}
+
+.navbar ul {
+    display: flex;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.navbar a {
+    padding: 15px 25px;
+    display: block;
+    color: #534741;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.navbar a:hover {
+    background: rgba(0, 0, 0, 0.20);
+}
+
+
+/* DROPDOWN */
+.dropdown-menu {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    min-width: 240px;
+
+    background: #fbe38a;
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+
+    border-radius: 0 0 8px 8px;
+    max-height: 0;
+    opacity: 0;
+    overflow: hidden;
+    transition: max-height 0.35s ease, opacity 0.3s ease;
+}
+
+.dropdown:hover .dropdown-menu {
+    max-height: 300px;
+    opacity: 1;
+}
+
+
+/* ===== MAIN CONTENT (background normal) ===== */
+.container {
+    width: 90%;
+    margin: 20px auto;
+    padding: 20px;
+    background: #fbe38a;
+    color: #534741;
+    border-radius: 10px;
+    font-size: large;
+}
+
+
+/* ===== GLASS EFFECT KHUSUS UNTUK TITLE ===== */
+.glass-title {
+    text-align: center;
+    padding: 12px 20px;
+    margin-top: 0;
+    font-size: 26px;
+    font-weight: bold;
+
+    /* Efek kaca */
+    background: rgba(255, 255, 255, 0.25);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    border-radius: 12px;
+}
+
+
+/* ===== SECTION 2 - 3 COLUMN ===== */
+.container-3col {
+    width: 90%;
+    margin: 30px auto;
+    padding: 20px;
+    background: #fbe38a;
+    color: #534741;
+    font-size: 17px;
+}
+
+.row-3col {
+    display: flex;
+    gap: 20px;
+}
+
+.col {
+    flex: 1;
+    background: rgba(255,255,255,0.12);
+    padding: 15px;
+    border-radius: 10px;
+    border: 1px solid rgba(255,255,255,0.2);
+    text-align: center;
+}
+
+/* ===== GAMBAR DI DALAM KOLOM ===== */
+.col-img {
+    width: 100%;           /* gambar mengikuti lebar kolom */
+    height: 160px;         /* tinggi fix agar rapi */
+    object-fit: cover;     /* crop otomatis supaya tidak gepeng */
+    border-radius: 10px;   /* sudut membulat */
+    border: 2px solid rgba(255,255,255,0.5);
+    transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+/* Efek hover */
+.col-img:hover {
+    transform: scale(1.05);   /* membesar sedikit */
+    box-shadow: 0 8px 20px rgba(0,0,0,0.35);  /* shadow lembut */
+}
+
+.col h3 {
+    margin-top: 12px;
+    color: #534741;
+}
+
+/* RESPONSIVE */
+@media (max-width: 768px) {
+    .row-3col {
+        flex-direction: column;
+    }
+}
+
+/* ===== SECTION 3 – 2 COLUMN (LEFT SMALL + RIGHT BIG) ===== */
+.container-2col {
+    width: 90%;
+    margin: 30px auto;
+    padding: 20px;
+    background: #fff460;
+    color: #452829;
+    border-radius: 10px;
+    font-size: 17px;
+}
+
+.row-2col {
+    display: flex;
+    gap: 20px;
+}
+
+/* KOLUM KIRI KECIL */
+.col-left {
+    width: 25%;
+    /* kiri 25% */
+    background: rgba(255, 255, 255, 0.15);
+    padding: 15px;
+    border-radius: 10px;
+    border: 1px solid rgba(255, 255, 255, 0.3);
+}
+
+/* List di kiri */
+.side-list {
+    padding-left: 15px;
+}
+
+.side-list li {
+    margin-bottom: 8px;
+    font-weight: 600;
+}
+
+/* KOLUM KANAN BESAR */
+.col-right {
+    width: 75%;
+    /* kanan 75% */
+    background: rgba(255, 255, 255, 0.12);
+    padding: 20px;
+    border-radius: 10px;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    font-size:larger;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .row-2col {
+        flex-direction: column;
+    }
+
+    .col-left,
+    .col-right {
+        width: 100%;
+    }
+}
